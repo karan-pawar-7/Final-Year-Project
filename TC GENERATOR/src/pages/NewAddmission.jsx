@@ -211,9 +211,7 @@ export default function NewAdmission() {
                   College Admission & Certificate Management Portal
                 </p>
 
-                <p className="mt-1 text-xs text-slate-400">
-                  Established 2009 · Maharashtra, India
-                </p>
+                 
               </div>
             </div>
 
