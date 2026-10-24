@@ -11,6 +11,7 @@ import {
   FileCheck,
   Menu,
   X,
+  ShieldCheck,
 } from "lucide-react";
 
 function Navbar() {
@@ -34,6 +35,11 @@ function Navbar() {
       path: "/tc",
       icon: FileText,
     },
+    {
+      name: "TC Approval",
+      path: "/admin/tc-approval-requests",
+      icon: ShieldCheck,
+    },
   ];
 
   const linkStyle = ({ isActive }) =>
@@ -43,8 +49,13 @@ function Navbar() {
         : "text-slate-200 hover:bg-white/10 hover:text-white"
     }`;
 
+  const closeMenus = () => {
+    setMoreOpen(false);
+    setMobileOpen(false);
+  };
+
   return (
-    <nav className="relative z-50 border-t border-white/10 bg-[#0c1b32] text-white shadow-lg">
+    <nav className="sticky top-0 z-50 border-t border-white/10 bg-[#0c1b32] text-white shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
 
         {/* Mobile menu button */}
@@ -53,6 +64,7 @@ function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="rounded-lg p-2 hover:bg-white/10 lg:hidden"
           aria-label="Toggle navigation"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
@@ -67,6 +79,7 @@ function Navbar() {
                 key={item.path}
                 to={item.path}
                 end={item.path === "/"}
+                onClick={closeMenus}
                 className={linkStyle}
               >
                 <Icon size={19} />
@@ -99,7 +112,7 @@ function Navbar() {
               <div className="absolute right-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-slate-200 bg-white p-2 text-slate-800 shadow-2xl">
                 <Link
                   to="/bonafide"
-                  onClick={() => setMoreOpen(false)}
+                  onClick={closeMenus}
                   className="flex items-center gap-3 rounded-lg px-3 py-3 text-sm hover:bg-blue-50"
                 >
                   <FileCheck size={19} className="text-cyan-700" />
@@ -108,7 +121,7 @@ function Navbar() {
 
                 <Link
                   to="/history"
-                  onClick={() => setMoreOpen(false)}
+                  onClick={closeMenus}
                   className="flex items-center gap-3 rounded-lg px-3 py-3 text-sm hover:bg-blue-50"
                 >
                   <History size={19} className="text-purple-700" />
@@ -117,7 +130,7 @@ function Navbar() {
 
                 <Link
                   to="/certificates"
-                  onClick={() => setMoreOpen(false)}
+                  onClick={closeMenus}
                   className="flex items-center gap-3 rounded-lg px-3 py-3 text-sm hover:bg-blue-50"
                 >
                   <FileText size={19} className="text-emerald-700" />
@@ -128,17 +141,15 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile brand */}
+        {/* Mobile Brand */}
         <Link
           to="/"
+          onClick={closeMenus}
           className="text-sm font-bold text-cyan-300 lg:hidden"
         >
           GP AMBAD
         </Link>
-
-     
-       
-      </div> 
+      </div>
 
       {/* Mobile Navigation */}
       {mobileOpen && (
@@ -151,7 +162,7 @@ function Navbar() {
                 key={item.path}
                 to={item.path}
                 end={item.path === "/"}
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMenus}
                 className={linkStyle}
               >
                 <Icon size={19} />
@@ -166,7 +177,7 @@ function Navbar() {
 
           <Link
             to="/bonafide"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMenus}
             className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm text-slate-200 hover:bg-white/10"
           >
             <FileCheck size={19} />
@@ -175,7 +186,7 @@ function Navbar() {
 
           <Link
             to="/history"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMenus}
             className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm text-slate-200 hover:bg-white/10"
           >
             <History size={19} />
@@ -184,7 +195,7 @@ function Navbar() {
 
           <Link
             to="/certificates"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMenus}
             className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm text-slate-200 hover:bg-white/10"
           >
             <FileText size={19} />

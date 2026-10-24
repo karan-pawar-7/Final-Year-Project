@@ -163,14 +163,73 @@ export default function NewAdmission() {
     setMessage("");
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setMessage("Saving student information...");
 
-    console.log("Admission Details:", form);
+    // Map the existing form field names to the Mongoose Student schema.
+    const payload = {
+      tcNo: form.tcNumber.trim(),
+      recordNo: form.recordNumber.trim(),
+      pageNo: form.pageNumber.trim(),
+      enrollmentNo: form.enrollmentNumber.trim(),
+      instituteName: form.instituteName.trim(),
+      registrationNumber: form.registrationNumber.trim(),
+      fullName: form.candidateName.trim(),
+      rollNumber: form.rollNumber.trim(),
+      motherName: form.motherName.trim(),
+      motherTongue: form.motherTongue.trim(),
+      raceAndCaste: form.caste.trim(),
+      subCaste: form.subCaste.trim(),
+      religion: form.religion,
+      category: form.category,
+      placeOfBirth: form.placeOfBirth.trim(),
+      nationality: form.nationality.trim(),
+      dateOfBirth: form.dob,
+      dobInWords: form.dobWords.trim(),
+      lastInstituteAttended: form.lastInstitute.trim(),
+      dateOfAdmission: form.admissionDate || null,
+      progress: form.progress,
+      progressOther: form.progressOther.trim(),
+      conduct: form.conduct,
+      conductOther: form.conductOther.trim(),
+      dateOfLeaving: form.leavingDate || null,
+      course: form.course.trim(),
+      academicYear: form.year,
+      admissionFrom: form.fromDate || null,
+      status: form.leavingDate ? "Left" : "Studying",
+    };
 
-    setMessage(
-      "Form submitted in the browser. Backend connection is required to save the record permanently."
-    );
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/students`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.message || "Could not save student information."
+        );
+      }
+
+      setMessage(
+        result.message || "Student information saved successfully."
+      );
+      // Keep the form values visible after a successful save.
+    } catch (error) {
+      setMessage(
+        error.message ||
+          "Could not connect to the backend. Check that the server is running."
+      );
+    }
   };
 
   return (
