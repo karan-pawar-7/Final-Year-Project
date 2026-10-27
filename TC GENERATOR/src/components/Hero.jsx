@@ -8,7 +8,7 @@ function Hero() {
      <div
   className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/college-building.avif')",
+   backgroundImage: `url('${import.meta.env.BASE_URL}college-building.avif')`,
     backgroundAttachment: "fixed",
   }}
 />

@@ -55,9 +55,11 @@ function Home() {
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+
         style={{
-          backgroundImage: "url('/college-building.avif')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}college-building.avif')`,
         }}
+
       />
 
       {/* College Header */}
@@ -106,10 +108,10 @@ function Home() {
 
         </div>
       </header> */}
-       {/* <div className="min-w-0 flex-1 sticky">
+      {/* <div className="min-w-0 flex-1 sticky">
             <Navbar />
           </div> */}
-           <Navbar />
+      <Navbar />
 
 
       {/* Main Content */}
@@ -124,59 +126,59 @@ function Home() {
           <div className="mx-auto max-w-[1600px]">
 
             {/* Section Heading */}
-           {/* Administrative Services Heading */}
-<div className="relative mb-10 flex flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-white/15 bg-[#0c1b32]/65 p-6 shadow-2xl backdrop-blur-md sm:p-8 lg:flex-row lg:items-center">
+            {/* Administrative Services Heading */}
+            <div className="relative mb-10 flex flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-white/15 bg-[#0c1b32]/65 p-6 shadow-2xl backdrop-blur-md sm:p-8 lg:flex-row lg:items-center">
 
-  {/* Decorative Glow */}
-  <div className="pointer-events-none absolute -left-16 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
-  <div className="pointer-events-none absolute -right-10 -bottom-20 h-48 w-48 rounded-full bg-blue-500/15 blur-3xl" />
+              {/* Decorative Glow */}
+              <div className="pointer-events-none absolute -left-16 -top-20 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl" />
+              <div className="pointer-events-none absolute -right-10 -bottom-20 h-48 w-48 rounded-full bg-blue-500/15 blur-3xl" />
 
-  <div className="relative z-10">
-    {/* Small Label */}
-    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1.5">
-      <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300" />
-      <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200">
-        Portal Modules
-      </p>
-    </div>
+              <div className="relative z-10">
+                {/* Small Label */}
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1.5">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300" />
+                  <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-200">
+                    Portal Modules
+                  </p>
+                </div>
 
-    {/* Main Heading */}
-    <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-      Administrative{" "}
-      <span className="text-cyan-300">Services</span>
-    </h2>
+                {/* Main Heading */}
+                <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                  Administrative{" "}
+                  <span className="text-cyan-300">Services</span>
+                </h2>
 
-    {/* Accent Line */}
-    <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-cyan-300 to-blue-500" />
+                {/* Accent Line */}
+                <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-cyan-300 to-blue-500" />
 
-   
-  </div>
 
-  {/* Academic Year Badge */}
-  <div className="relative z-10 shrink-0">
-    <div className="rounded-2xl border border-white/15 bg-white/5 px-5 py-4 shadow-lg backdrop-blur-md">
-      <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
-        Academic Year
-      </p>
+              </div>
 
-      <p className="mt-2 text-xl font-bold text-white">
-        2026
-        <span className="mx-2 text-cyan-300">—</span>
-        2027
-      </p>
+              {/* Academic Year Badge */}
+              <div className="relative z-10 shrink-0">
+                <div className="rounded-2xl border border-white/15 bg-white/5 px-5 py-4 shadow-lg backdrop-blur-md">
+                  <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
+                    Academic Year
+                  </p>
 
-      <div className="mt-2 flex items-center gap-2">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-        <span className="text-xs text-emerald-300">
-          Admission Portal Active
-        </span>
-      </div>
-    </div>
-  </div>
- 
+                  <p className="mt-2 text-xl font-bold text-white">
+                    2026
+                    <span className="mx-2 text-cyan-300">—</span>
+                    2027
+                  </p>
+
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-xs text-emerald-300">
+                      Admission Portal Active
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               <span className="w-fit rounded-full border border-white/20 bg-[#102139]/80 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-md">
-  Academic Year 2026–27
-</span>
+                Academic Year 2026–27
+              </span>
             </div>
 
             {/* Service Cards */}

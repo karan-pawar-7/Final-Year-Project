@@ -1,4 +1,4 @@
- 
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -227,7 +227,7 @@ export default function NewAdmission() {
     } catch (error) {
       setMessage(
         error.message ||
-          "Could not connect to the backend. Check that the server is running."
+        "Could not connect to the backend. Check that the server is running."
       );
     }
   };
@@ -238,9 +238,11 @@ export default function NewAdmission() {
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+
         style={{
-          backgroundImage: "url('/college-building.avif')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}college-building.avif')`,
         }}
+
       />
 
       {/* Dark Overlay - Home Page Theme */}
@@ -297,11 +299,11 @@ export default function NewAdmission() {
         </header> */}
 
 
-         {/* <div className="min-w-0 flex-1">
+        {/* <div className="min-w-0 flex-1">
               <Navbar />
             </div> */}
 
-             <Navbar />
+        <Navbar />
 
 
         {/* Main Content */}
@@ -317,21 +319,21 @@ export default function NewAdmission() {
 
           {/* Page Heading */}
           <section className="mb-6 flex w-full max-w-[500px] flex-col gap-4 rounded-2xl border border-cyan-400/30 bg-[#0c1b32]/95 p-5 shadow-2xl backdrop-blur-xl sm:flex-row sm:items-center sm:p-6">
-  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 text-white shadow-lg shadow-blue-900/40">
-    <GraduationCap size={34} />
-  </div>
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 text-white shadow-lg shadow-blue-900/40">
+              <GraduationCap size={34} />
+            </div>
 
-  <div>
-    <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-cyan-400">
-      Student Mnagement Portal
-    </p>
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-cyan-400">
+                Student Mnagement Portal
+              </p>
 
-    <h2 className="mt-1 text-3xl font-extrabold text-white sm:text-4xl">
-      New{" "}
-      <span className="text-cyan-400">Admission</span>
-    </h2>
-  </div>
-</section>
+              <h2 className="mt-1 text-3xl font-extrabold text-white sm:text-4xl">
+                New{" "}
+                <span className="text-cyan-400">Admission</span>
+              </h2>
+            </div>
+          </section>
 
           {/* Admission Form */}
           <form

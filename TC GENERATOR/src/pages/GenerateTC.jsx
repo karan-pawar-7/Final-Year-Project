@@ -810,9 +810,11 @@ export default function GenerateTC() {
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/college-building.avif')",
-        }}
+       
+style={{
+  backgroundImage: `url('${import.meta.env.BASE_URL}college-building.avif')`,
+}}
+
       />
 
       {/* Dark Overlay */}

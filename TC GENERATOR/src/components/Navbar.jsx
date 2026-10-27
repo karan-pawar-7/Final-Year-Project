@@ -74,7 +74,7 @@ function Navbar() {
         {/* ---------- Brand ---------- */}
         <Link to="/" onClick={closeMenus} className="flex shrink-0 items-center gap-3">
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Government Polytechnic Ambad"
             className="h-14 w-14 rounded-full bg-white object-contain xl:h-12 xl:w-12 2xl:h-14 2xl:w-14"
           />
