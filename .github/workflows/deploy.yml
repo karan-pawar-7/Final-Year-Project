@@ -1,0 +1,48 @@
+name: Deploy Vite Frontend
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        working-directory: TC GENERATOR
+        run: npm ci
+
+      - name: Build Vite app
+        working-directory: TC GENERATOR
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: TC GENERATOR/dist
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4
