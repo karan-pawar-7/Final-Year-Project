@@ -1,4 +1,4 @@
-
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 import {
   Search,
@@ -94,6 +94,7 @@ const courses = [
 ];
 
 function StudentAdmissions() {
+
   const [students, setStudents] = useState(initialStudents);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("All Statuses");
@@ -144,6 +145,8 @@ function StudentAdmissions() {
     setStudents((previous) => [newStudent, ...previous]);
   }
 
+
+ 
   function editStudent(student) {
     const name = window.prompt("Edit student name:", student.name);
     if (!name?.trim()) return;
@@ -166,7 +169,7 @@ function StudentAdmissions() {
   return (
     <div className="min-h-screen bg-[#f1f6fd] font-sans text-slate-800">
       {/* Top Government Bar */}
-      <div className="border-b border-slate-700 bg-[#071426] px-4 py-2 text-xs text-slate-300 sm:px-8">
+      {/* <div className="border-b border-slate-700 bg-[#071426] px-4 py-2 text-xs text-slate-300 sm:px-8">
         <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-bold text-teal-400">
@@ -191,10 +194,11 @@ function StudentAdmissions() {
             <ExternalLink size={12} />
           </a>
         </div>
-      </div>
+      </div> */}
+       <Navbar />
 
       {/* College Header */}
-      <header className="border-b border-slate-700 bg-[#0b1c36] px-4 py-5 text-white shadow-md sm:px-8">
+      {/* <header className="border-b border-slate-700 bg-[#0b1c36] px-4 py-5 text-white shadow-md sm:px-8">
         <div className="mx-auto flex max-w-[1600px] items-center gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-slate-400 bg-white/10">
             <GraduationCap size={30} className="text-cyan-300" />
@@ -227,7 +231,7 @@ function StudentAdmissions() {
             <ChevronDown size={16} className="text-slate-300" />
           </button>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Page - Full Width, No Sidebar */}
       <main className="mx-auto max-w-[1700px] px-4 py-7 sm:px-8 lg:px-12">

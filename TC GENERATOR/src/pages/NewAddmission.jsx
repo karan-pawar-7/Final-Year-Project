@@ -251,9 +251,9 @@ export default function NewAdmission() {
 
       <div className="relative z-10">
         {/* College Header */}
-        <header className="relative z-30 w-full border-b border-white/10 bg-[#0c1b32] text-white shadow-2xl">
+        {/* <header className="relative z-30 w-full border-b border-white/10 bg-[#0c1b32] text-white shadow-2xl">
           <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-5 py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-6 xl:px-10">
-            {/* College Logo and Details */}
+            
             <div className="flex min-w-0 shrink-0 items-center gap-4">
               <img
                 src="/college-logo.png"
@@ -274,12 +274,12 @@ export default function NewAdmission() {
               </div>
             </div>
 
-            {/* Shared Navbar */}
+         
             <div className="min-w-0 flex-1 lg:px-2">
               <Navbar />
             </div>
 
-            {/* Academic Session */}
+           
             <div className="w-full shrink-0 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-cyan-400/30 sm:w-44">
               <p className="text-xs text-slate-400">
                 Academic Session
@@ -294,7 +294,15 @@ export default function NewAdmission() {
               </p>
             </div>
           </div>
-        </header>
+        </header> */}
+
+
+         {/* <div className="min-w-0 flex-1">
+              <Navbar />
+            </div> */}
+
+             <Navbar />
+
 
         {/* Main Content */}
         <main className="mx-auto max-w-[1700px] px-4 py-8 sm:px-6 lg:px-10">

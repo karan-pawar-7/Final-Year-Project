@@ -61,10 +61,10 @@ function Home() {
       />
 
       {/* College Header */}
-      <header className="relative z-20 w-full border-b border-slate-700 bg-[#0c1b32] text-white shadow-lg">
+      {/* <header className="relative z-20 w-full border-b border-slate-700 bg-[#0c1b32] text-white shadow-lg">
         <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-5 py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-6 xl:px-10">
 
-          {/* College Logo and Details */}
+         
           <div className="flex min-w-0 shrink-0 items-center gap-4">
             <img
               src="/college-logo.png"
@@ -85,12 +85,11 @@ function Home() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div className="min-w-0 flex-1 lg:px-2">
             <Navbar />
           </div>
 
-          {/* Academic Session */}
+         
           <div className="w-full shrink-0 rounded-xl border border-white/10 bg-white/5 px-4 py-3 sm:w-40">
             <p className="text-xs text-slate-400">
               Academic Session
@@ -106,7 +105,12 @@ function Home() {
           </div>
 
         </div>
-      </header>
+      </header> */}
+       {/* <div className="min-w-0 flex-1 sticky">
+            <Navbar />
+          </div> */}
+           <Navbar />
+
 
       {/* Main Content */}
       <main className="relative z-10 w-full">

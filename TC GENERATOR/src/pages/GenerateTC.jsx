@@ -823,7 +823,7 @@ export default function GenerateTC() {
 
       <div className="relative z-10">
         {/* College Header */}
-        <header className="relative z-30 w-full border-b border-white/10 bg-[#0c1b32] shadow-2xl">
+        {/* <header className="relative z-30 w-full border-b border-white/10 bg-[#0c1b32] shadow-2xl">
           <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-5 py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-6 xl:px-10">
             <div className="flex min-w-0 shrink-0 items-center gap-4">
               <img
@@ -852,7 +852,15 @@ export default function GenerateTC() {
               <p className="mt-1 font-bold text-white">2026–2027</p>
             </div>
           </div>
-        </header>
+        </header> */}
+        {/* <div className="relative z-10">
+ 
+  <Navbar />
+  </div>  */}
+   <Navbar />
+
+  {/* Main Content */}
+  <main className="mx-auto max-w-[1700px] px-4 py-8 sm:px-6 lg:px-10"></main>
 
         {/* Main Content */}
         <main className="mx-auto max-w-[1700px] px-4 py-8 sm:px-6 lg:px-10">
