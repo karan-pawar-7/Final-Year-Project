@@ -7,7 +7,7 @@ import NewAdmission from "./pages/NewAddmission.jsx";
 import GenerateTC from "./pages/GenerateTC.jsx";
 import StudentAdmissions from "./pages/StudentAdmission.jsx";
 import TCApprovalRequests from "./pages/TCApprovalRequests.jsx";
-import TCRequest from "./Pages/TCRequest.jsx";
+import TCRequest from "./pages/TCRequest.jsx";
 
 function App() {
   return (
